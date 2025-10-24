@@ -5,12 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
+import lombok.*;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+
 @Entity
 public class Article {
     @Id
@@ -20,7 +21,6 @@ public class Article {
     private String title;
     @Column
     private String content;
-
 
 
 }
