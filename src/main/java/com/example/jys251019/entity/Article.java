@@ -13,6 +13,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 
 @Entity
+@Getter
 public class Article {
     @Id
     @GeneratedValue
