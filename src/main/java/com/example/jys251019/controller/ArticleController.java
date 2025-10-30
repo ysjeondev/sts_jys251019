@@ -59,7 +59,23 @@ public class ArticleController {
         model.addAttribute("articleList", articleEntityList);
         // 3.뷰 페이지 설정하기
         return "articles/index";
-
+    }
+    @GetMapping("/articles/{id}/edit")  //URL 요청접수
+    public String edit(@PathVariable Long id, Model model){    // 메서드 생성 및 뷰 페이지 작성, model 객체 받아 오기
+        //수정할 데이터 가져오기
+        Article articleEntity = articleRepository.findById(id).orElse(null);
+        //모델에 데이터 등록 하기
+        model.addAttribute("article", articleEntity);  // articleEntity를 article로 등록
+        //뷰 페이지 설정하기
+        return "articles/edit";
     }
 }
+
+
+
+
+
+
+
+
 
